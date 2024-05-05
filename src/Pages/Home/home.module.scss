@@ -1,0 +1,141 @@
+.container {
+  color: var(--secondary-color);
+  background: var(--Primary-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  .contnet {
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    align-items: center;
+    flex-grow: 1;
+    height: 76vh;
+    overflow: auto;
+
+    h1 {
+      font-size: var(--max-Font-Size);
+      text-align: center;
+      span {
+        font-size: var(--Large-Font-Size);
+        font-weight: 500;
+        span {
+          color: rgb(255, 83, 83);
+          font-weight: bolder;
+          font-size: larger;
+        }
+      }
+    }
+
+    .block {
+      width: 80%;
+      display: flex;
+      justify-content: space-around;
+      margin-top: 50px;
+      flex-wrap: wrap;
+      gap: 10px;
+      .left {
+        padding: 20px;
+        background: #aebffc83;
+        border-radius: var(--border-radius);
+        width: 50%;
+        .blockTitle {
+          font-weight: bolder;
+        }
+        p {
+          font-weight: 500;
+          color: var(--secondary-color);
+          font-size: var(--Mid-Font-Size);
+        }
+      }
+      .blockSubs {
+        font-weight: 500;
+        span {
+          font-weight: bolder;
+        }
+      }
+      .right {
+        background-image: url("../../../public/MEARN.png") !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background: rgba(13, 36, 53, 0.26);
+        width: 300px;
+        height: 300px;
+        border-radius: var(--border-radius);
+      }
+      .htmlcss {
+        background-image: url("../../../public/htmlcss.jpg") !important;
+        background-repeat: no-repeat;
+        background-size: cover !important;
+      }
+      .javascript {
+        background-image: url("../../../public/Javascript.jpg") !important;
+        background-repeat: no-repeat;
+        background-size: cover !important;
+      }
+      .React {
+        background-image: url("../../../public/react1.png") !important;
+        background-repeat: no-repeat;
+        background-size: cover !important;
+      }
+      .Node {
+        background-image: url("../../../public/Node.png") !important;
+        background-repeat: no-repeat;
+        background-size: cover !important;
+      }
+      .ECommerce {
+        background-image: url("../../../public/ecommerce.jpg") !important;
+        background-repeat: no-repeat;
+        background-size: cover !important;
+      }
+    }
+    .sec1 {
+      margin-top: 80px;
+      .sub1 {
+        margin-top: 30px;
+        display: block;
+        width: 50vw !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    .contnet {
+      .sec1 {
+        .sub1 {
+        width: 90%!important;
+        margin: auto;
+        margin-top: 20px!important;
+        }
+      }
+      .block {
+        background: var(--main-color);
+        flex-direction: column;
+        width: 80% !important;
+        flex-wrap: nowrap !important;
+        align-items: center;
+        padding: 10px;
+        padding-bottom: 40px !important;
+        border-radius: var(--border-radius);
+        .left {
+          background: unset !important;
+          padding: unset !important;
+          width: 100% !important;
+          order: 1;
+        }
+        .right {
+          width: 100% !important;
+          height: 200px !important;
+        }
+      }
+    }
+  }
+}
