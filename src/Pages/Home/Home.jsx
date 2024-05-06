@@ -11,10 +11,7 @@ export default function Home() {
           <h1>
             Build <span>&</span> Learn
             <br />
-            <span>
-              <span>(</span>A Project-Based Approach to Full Stack Development
-              <span>)</span>
-            </span>
+            <span>A Project-Based Approach to Full Stack Development</span>
           </h1>
 
           <div className={styles.block}>
