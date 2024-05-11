@@ -15,11 +15,11 @@ body {
 }
 /* For Webkit based browsers (Chrome, Safari, etc.) */
 ::-webkit-scrollbar {
-  width: 7px; /* Width of the scrollbar */
+  width: 5px; /* Width of the scrollbar */
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f100; /* Color of the scrollbar track */
+  border-radius: 6px; /* Rounded corners of the thumb */
 }
 
 ::-webkit-scrollbar-thumb {
