@@ -8,9 +8,9 @@ export default function JsGuide() {
         <Nav pageType="js" />
         <div className={styles.contnet}>
           <h1>
-            JavaScript <span>Guide</span>
+            JavaScript
             <br />
-            <span>The Journey Begins</span>
+            <span>Javascript Basics</span>
           </h1>
         </div>
       </div>

@@ -17,7 +17,9 @@
 
   ol {
     overflow: hidden;
+    overflow-y: auto!important;
     width: 265px;
+    height: 70vh;
     padding: 30px 20px;
     border-radius: 12px;
     background: #0c2431;

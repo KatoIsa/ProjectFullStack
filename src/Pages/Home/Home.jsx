@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <div className={styles.container}>
-        <Nav />
+        <Nav pageType='home' />
         <div className={styles.contnet}>
           <h1>
             Build <span>&</span> Learn

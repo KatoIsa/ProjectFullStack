@@ -56,6 +56,12 @@ export default function Nav({ pageType }) {
   return (
     <div className={`${styles.container} ${isActive ? styles.hide : ""} `}>
       <ol className={`${isActive ? styles.hide : ""}`}>
+        <Link style={{ textDecoration: "none" }} to="/">
+          <li style={pageType === "home" ? activeNav.parent : null}>
+            {pageType !== "home" ? <span>{"< "}</span> : ''}
+             Home
+          </li>
+        </Link>
         {[
           {
             link: "/HtmlCssGuide",
@@ -88,7 +94,7 @@ export default function Nav({ pageType }) {
             <li style={pageType === item.name ? activeNav.parent : null}>
               <span style={pageType === item.name ? activeNav.child : null}>
                 Phase({i + 1}):
-              </span>{" "}
+              </span>
               <br /> {item?.title}
             </li>
           </Link>

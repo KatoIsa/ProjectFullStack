@@ -8,9 +8,9 @@ export default function Practice() {
         <Nav pageType="practice" />
         <div className={styles.contnet}>
           <h1>
-            Best Practices <span>&</span> Advanced Skills
+            Best Practices
             <br />
-            <span>The Journey Begins</span>
+            <span>Best Practices and Advanced Skills</span>
           </h1>
         </div>
       </div>

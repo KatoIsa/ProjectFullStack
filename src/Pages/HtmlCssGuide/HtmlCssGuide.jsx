@@ -9,9 +9,9 @@ export default function BasicsHtml() {
         <Nav pageType="htmlcss" />
         <div className={styles.contnet}>
           <h1>
-            HTML <span>&</span> CSS <span>BASICS</span>
+            HTML <span>&</span> CSS
             <br />
-            <span>The Journey Begins</span>
+            <span>HTML and CSS Basics</span>
           </h1>
         </div>
       </div>

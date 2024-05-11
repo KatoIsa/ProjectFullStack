@@ -8,9 +8,9 @@ export default function ReactGuide() {
         <Nav pageType="react" />
         <div className={styles.contnet}>
           <h1>
-            Frontend <span>Development</span> <span>With</span> React
+            Frontend Development
             <br />
-            <span>The Journey Begins</span>
+            <span>WITH REACT JS</span>
           </h1>
         </div>
       </div>

@@ -8,9 +8,9 @@ export default function NodeGuide() {
         <Nav pageType="node" />
         <div className={styles.contnet}>
           <h1>
-            Backend Development <span>With</span> Node <span>&</span> Express
+            Backend Development
             <br />
-            <span>The Journey Begins</span>
+            <span>WITH NODE AND EXPRESS</span>
           </h1>
         </div>
       </div>

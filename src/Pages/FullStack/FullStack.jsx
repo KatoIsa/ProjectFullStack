@@ -8,9 +8,9 @@ export default function FullStack() {
         <Nav pageType="full" />
         <div className={styles.contnet}>
           <h1>
-            Integration <span>&</span> Full Stack <span>Projects</span>
+            Full Stack
             <br />
-            <span>The Journey Begins</span>
+            <span>Integration and Full Stack Projects</span>
           </h1>
         </div>
       </div>
