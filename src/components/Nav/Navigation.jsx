@@ -1,58 +1,104 @@
-import { RiArrowLeftSLine } from 'react-icons/ri'
-import styles from './nav.module.scss'
-import {  useEffect, useState } from 'react'
+import { RiArrowLeftSLine } from "react-icons/ri";
+import styles from "./nav.module.scss";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
-export default function Nav() {
-    const [isActive, setIsActive] = useState(false);
-
-    const handle = () => {
-        if (isActive === false) setIsActive(true);
-        if (isActive === true) setIsActive(false); 
+export default function Nav({ pageType }) {
+  const [isActive, setIsActive] = useState(false);
+  const handle = () => {
+    if (isActive === false) setIsActive(true);
+    if (isActive === true) setIsActive(false);
+  };
+  const activeNav = {
+    parent: {
+      color: "var(--secondary-color)",
+      width: "120% !important",
+      marginLeft: "-20px",
+      padding: "15px 7px",
+      cursor: "pointer",
+      background: "var(--Primary-color)",
+      boxShadow: "0px 0px 5px 3px #00000041",
+    },
+    child: { color: "#0c2431" },
+  };
+  // ass soon as the window loads trigger this aaction ...
+  useEffect(() => {
+    if (window.innerWidth < 900) {
+      console.log("Mobile Screen: no resize");
+      setIsActive(true);
+    } else {
+      console.log("Desktop Screen: no resize");
+      setIsActive(false);
     }
+  }, []);
 
-    useEffect(()=>{
-      const handleResize = ()=>{
-        if (window.innerWidth < 900) {
-          console.log('Mobile Device Detected ...')
-          setIsActive(true);
-        } else {
-          console.log('Desktop Device Detected ...')
-          setIsActive(false);
-        }
+  // reset values when user resizes the window ...
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 900) {
+        console.log("Mobile Screen: Resize ...");
+        setIsActive(true);
+      } else {
+        console.log("Desktop Screen: Resize ...");
+        setIsActive(false);
       }
+    };
 
-      window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", handleResize);
 
-      return () => {
-        window.removeEventListener('resize', handleResize);
-      }
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
-    },[])
-
-     return (
-       <div className={`${styles.container} ${isActive ? styles.hide : ""} `}>
-         <ol className={`${isActive ? styles.hide : ""}`}>
-           <li>
-             <span>Phase(1):</span> <br /> HTML and CSS Basics
-           </li>
-           <li>
-             <span>Phase(2):</span> <br /> JavaScript Basics
-           </li>
-           <li>
-             <span>Phase(3):</span> <br /> Frontend Development with React
-           </li>
-           <li>
-             <span>Phase(4):</span> <br /> Backend Development with Node.js and
-             Express
-           </li>
-           <li>
-             <span>Phase(5):</span> <br /> Integration and Full Stack Projects
-           </li>
-           <li>
-             <span>Phase(6):</span> <br /> Best Practices and Advanced Skills
-           </li>
-         </ol>
-         <RiArrowLeftSLine className={styles.NavButton} onClick={handle} />
-       </div>
-     );
+  // trigger side nav element active.
+  return (
+    <div className={`${styles.container} ${isActive ? styles.hide : ""} `}>
+      <ol className={`${isActive ? styles.hide : ""}`}>
+        {[
+          {
+            link: "/HtmlCssGuide",
+            name: "htmlcss",
+            title: "HTML and CSS Basics",
+          },
+          { link: "/JsGuide", name: "js", title: "Javascript Basics" },
+          {
+            link: "/ReactGuide",
+            name: "react",
+            title: "Frontend Development with React",
+          },
+          {
+            link: "/NodeGuide",
+            name: "node",
+            title: "Backend Dev with Node and Express",
+          },
+          {
+            link: "/FullStack",
+            name: "full",
+            title: "Integration and Full Stack Projects",
+          },
+          {
+            link: "/practice",
+            name: "practice",
+            title: "Best Practices and Advanced Skills",
+          },
+        ].map((item, i) => (
+          <Link key={i + 1} style={{ textDecoration: "none" }} to={item?.link}>
+            <li style={pageType === item.name ? activeNav.parent : null}>
+              <span style={pageType === item.name ? activeNav.child : null}>
+                Phase({i + 1}):
+              </span>{" "}
+              <br /> {item?.title}
+            </li>
+          </Link>
+        ))}
+      </ol>
+      <RiArrowLeftSLine className={styles.NavButton} onClick={handle} />
+    </div>
+  );
 }
+
+Nav.propTypes = {
+  pageType: PropTypes.string,
+};

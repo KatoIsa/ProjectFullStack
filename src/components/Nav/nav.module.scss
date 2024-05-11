@@ -34,8 +34,8 @@
       border-bottom: 1px solid #ffffff1e;
       padding-bottom: 10px;
       cursor: pointer;
-      padding:5px 15px;      
-      width: 120%!important;
+      padding: 5px 15px;
+      width: 120% !important;
       margin-left: -20px;
       list-style-type: none;
       transition: all 0.15s ease-in-out;
@@ -45,15 +45,15 @@
         font-size: var(--Mid-Font-Size);
       }
     }
-    li:hover{
+    li:hover {
       color: var(--secondary-color);
-      width: 120%!important;
+      width: 120% !important;
       margin-left: -20px;
       padding: 15px 7px;
       cursor: pointer;
       background: var(--Primary-color);
       box-shadow: 0px 0px 5px 3px #00000041;
-      span{
+      span {
         color: #0c2431;
       }
     }
